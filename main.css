@@ -54,3 +54,6 @@ body {
     padding-top: 0;
     border-radius: 4px;
 }
+input.ng-invalid.ng-dirty {
+            border: 1px solid red;
+        }
