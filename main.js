@@ -5,11 +5,28 @@
 	  // var message = 'Welcome Back, ' + email;
 	  // $('.welcome-message').text(message);
      //});
-	 
-	 
-	 var foodieApp = angular.module('foodieApp',[]);
-	 
-	 
+
+
+	 var foodieApp = angular.module('foodieApp',['ngRoute']);
+	 foodieApp.config(function ($routeProvider) {
+	$routeProvider
+	.when('/',{
+		templateUrl: 'pages/login.html',
+		controller: 'loginController'
+	})
+	.when('/home',{
+		templateUrl: 'pages/main.html',
+		controller: 'mainController'
+	})
+})
+
+
+
+	 foodieApp.controller('loginController',function($scope) {
+
+})
+
+
 	 foodieApp.controller('mainController',function($scope) {
 			$scope.restaurants = [{
 				name: 'Farzi Cafe',
@@ -48,7 +65,7 @@
 					name: 'Uncle Jack',
 					address: 'Booth 11, Sector 8, Chandigarh',
 					location: 'Sector 8, Chandigarh',
-				
+
 					vote: '4.2',
 					cuisines: 'American,Beverages,Desserts',
 					cost: '600',
@@ -66,7 +83,7 @@
 					hours: '12 Noon to 11 PM (Mon-Sun) ',
 					image: 'https://b.zmtcdn.com/data/reviews_photos/ab1/c2b343682cbb4331b63fac7c2dab6ab1_1478363486.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 				},
-				
+
 				{
 					name: 'Pirates of Grill',
 					address: '313, Third Floor, Elante Mall, Phase 1, Chandigarh Industrial',
@@ -82,6 +99,5 @@
 
 
 ]
-	 
+
 	 })
-	 
