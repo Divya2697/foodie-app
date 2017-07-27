@@ -208,10 +208,11 @@ input.ng-invalid.ng-dirty {                             /*input tag error showin
 }
 #removebutton                              /* remove button ki styling  */
 {
-  background-color:red;
+  background-color:#cb202d;
   color: white;
   position: absolute;
   margin-left: 300px;
+    padding: 0.4rem 1rem;
 }
 .todolist                                     /*to so list */
 {
