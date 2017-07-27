@@ -27,7 +27,6 @@
 
 	foodieApp.controller('restaurantController',function($scope,$routeParams,$http) {
 $scope.restaurantId = $routeParams.id;
-$scope.ingredients = [];
 var restaurants = [{
 	name: 'Farzi Cafe',
 	address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
@@ -52,7 +51,7 @@ var restaurants = [{
 	hours: '12 Noon to 3 PM, 6:30 PM to 11 PM (Mon-Sun) ',
 	bestDish: {
 	name: 'Corn Pizza',
-	image: 'http://noblepig.com/images/2016/06/Avocado-and-Three-Bean-Salad-is-perfect-for-a-summertime-barbecue-side-dish.JPG'
+	image: 'https://b.zmtcdn.com/data/reviews_photos/7db/0b9bc6bb0cc0151b05f9ad3f15de27db_1469477663.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 },
 	image: 'https://b.zmtcdn.com/data/pictures/chains/4/120014/481a8438b57d25815e87ee14c75aa3e5.jpg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
 },
@@ -141,7 +140,40 @@ $http({
 			})
 
 }
-	})
+$scope.ingredients = [];
+		$scope.probabilityvalue=[];
+
+		$scope.toDoList = function(){
+
+
+			 var todoarray = angular.copy($scope.ingredients);
+
+				$scope.todoList = [];
+				for(var i = 0 ; i<todoarray.length; i++){
+				  $scope.todoList.push({todoText:todoarray[i], done:false});
+				}
+
+			   $scope.remove = function() {
+			       var oldList = $scope.todoList;
+			       $scope.todoList = [];
+			       angular.forEach(oldList, function(x) {
+			           if (!x.done) $scope.todoList.push(x);
+			       });
+			   };
+
+			   $scope.done = function() {
+
+			   		console.log("hhhh");
+			   	//	donee=!donee;
+			   		//$.text-decoration: overline;
+
+			   }
+
+
+
+		}
+
+	});
 
 
 

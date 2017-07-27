@@ -152,3 +152,65 @@ input.ng-invalid.ng-dirty {
     border-radius: 4px;
     cursor: pointer;
 }
+
+#getIngredients-button{
+
+      /*  position: absolute;
+    margin-left: 172px;
+    margin-top: -27px*/
+}
+
+#getIngredients-button2{
+
+ /*       position: absolute;
+        margin-left: 296px;
+        /*margin-top: -27px;*/
+}
+
+.list-buttons{
+
+    list-style: none;
+    margin-left: 40px;
+
+}
+#button1
+{
+  background-color:#cb202d;
+  color: white;
+  margin-left:-200px;
+  margin-top: 50px;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+
+}
+#button2
+{
+
+    background-color:#cb202d;
+    color: white;
+    margin-left:50px;
+    border-radius: 20px;
+    padding: 0.4rem 1rem;
+
+
+  }
+#showbutton
+{
+
+      background-color:#cb202d;
+      color: white;
+      position: absolute;
+      margin-left: 300px;
+      border-radius: 20px;
+      padding: 0.4rem 1rem;
+}
+#removebutton
+{
+  background-color:black;
+  color: white;
+  position: absolute;
+}
+.todolist
+{
+  color:red;
+}
