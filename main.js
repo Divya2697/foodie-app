@@ -6,12 +6,12 @@
 	  // $('.welcome-message').text(message);
      //});
 
-
-	 var foodieApp = angular.module('foodieApp',['ngRoute']);
+//food app controller
+	 var foodieApp = angular.module('foodieApp',['ngRoute']);    //routing used here
 	 foodieApp.config(function ($routeProvider) {
 	$routeProvider
-	.when('/',{
-		templateUrl: 'pages/login.html',
+	.when('/',{                                       //route provider condition
+		templateUrl: 'pages/login.html',           //addresses
 		controller: 'loginController'
 	})
 	.when('/home',{
@@ -24,10 +24,10 @@
 	})
 })
 
-
+//restaurant controller
 	foodieApp.controller('restaurantController',function($scope,$routeParams,$http) {
 $scope.restaurantId = $routeParams.id;
-var restaurants = [{
+var restaurants = [{                                        //array of objects used for  details of restaurants
 	name: 'Farzi Cafe',
 	address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
 	location: 'Connaught Place',
@@ -108,7 +108,7 @@ var restaurants = [{
 	$scope.getIngredients = function(url) {
 // Do something
 var data = '{"inputs":[{"data":{"image":{"url":"' + url + '"}}}]}'
-$http({
+$http({                                                                        // used to call clarifai
 		'method': 'POST',
 		'url': 'https://api.clarifai.com/v2/models/bd367be194cf45149e75f01d59f77ba7/outputs',
 		'headers': {
@@ -140,10 +140,10 @@ $http({
 			})
 
 }
-$scope.ingredients = [];
+$scope.ingredients = [];              //array
 		$scope.probabilityvalue=[];
 
-		$scope.toDoList = function(){
+		$scope.toDoList = function(){           //to do list for getting ingredients
 
 
 			 var todoarray = angular.copy($scope.ingredients);
@@ -153,7 +153,7 @@ $scope.ingredients = [];
 				  $scope.todoList.push({todoText:todoarray[i], done:false});
 				}
 
-			   $scope.remove = function() {
+			   $scope.remove = function() {                     // for removing the ingredients which are not required
 			       var oldList = $scope.todoList;
 			       $scope.todoList = [];
 			       angular.forEach(oldList, function(x) {
@@ -186,7 +186,7 @@ $scope.ingredients = [];
 
 
 	 foodieApp.controller('mainController',function($scope) {          //controller for main restaurant data
-			$scope.restaurants = [{
+			$scope.restaurants = [{                                       //array of objects used for  details of restaurants
 				name: 'Farzi Cafe',
 				address: '38/39, Level 1, Block E , Inner Circle, Connaught Place',
 				location: 'Connaught Place',
